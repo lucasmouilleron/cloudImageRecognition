@@ -1,0 +1,10 @@
+{
+    "name": "testMoodstock",
+    "require": {
+        "php": ">=5.2.4",
+        "rmccue/requests": ">=1.0"
+    },
+    "config": {
+        "vendor-dir": "libs/vendor"
+    }
+}
