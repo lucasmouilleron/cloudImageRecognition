@@ -1,7 +1,6 @@
 _dev/js/libs/vendor
 cache
 composer.lock
-libs/vendor
 
 #################################################################################
 # miscs
