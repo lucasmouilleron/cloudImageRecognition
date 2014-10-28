@@ -86,7 +86,7 @@
     <?php if($success !== false):?>
         <div class="container"> 
             <div class="alert alert-success" role="alert"><?php echo $success?></div>
-            <?php if($imageFound || $searchImage):?>
+            <?php if(@$imageFound || @$searchImage):?>
                 <?php if ($imageFound):?>
                     <p>Found <?php echo $imageFound?></p>
                     <img class="ref-image" src="data/<?php echo getFileNameFromID($imageFound)?>"/>
