@@ -6,6 +6,7 @@ define("MS_API_SECRET","V6cqRjDuOX0sfSuT");
 define("MS_API_URL","http://api.moodstocks.com/v2");
 define("DATA_REFS_URL","data/refs");
 define("DATA_TMP_URL","data/tmp");
+define("DATA_TEST_URL","data/test");
 define("DATA_REFS_PATH",__DIR__."/../data/refs");
 define("DATA_TMP_PATH",__DIR__."/../data/tmp");
 

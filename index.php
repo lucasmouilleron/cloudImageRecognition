@@ -102,6 +102,7 @@
     <!-- /////////////////////////////////////////////////////////////// -->       
     <div class="container"> 
         <h2>Search with an image</h2>
+        <p><a href="<?php echo DATA_TEST_URL?>" target="_blank">Test images</a></p>
         <form method="post" class="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="jpgFile">JPG file</label>
@@ -115,6 +116,7 @@
     <!-- /////////////////////////////////////////////////////////////// -->       
     <div class="container"> 
         <h2>Add a reference image</h2>
+        <p><a href="<?php echo DATA_TEST_URL?>" target="_blank">Test images</a></p>
         <form method="post" class="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="jpgFile">JPG file</label>
