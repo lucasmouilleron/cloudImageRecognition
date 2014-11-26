@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 
-    <title>Moodstock test</title>
+    <title>Cloud image recognition test</title>
     <meta name="description" content="">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,8 +15,8 @@
     <!-- /////////////////////////////////////////////////////////////// -->       
     <div class="container">
         <div class="jumbotron">
-            <h1>Moodstock Test</h1>
-            <p>https://moodstocks.com</p>
+            <h1>Cloud image recognition test</h1>
+            <p>Using the moodstocks.com cloud service</p>
         </div>
     </div>
 
