@@ -33,7 +33,7 @@
     if(@$_GET["action"] == "delete") {
         $refID = $_GET["refID"];
         deleteImage($refID);
-        if(@unlink(DATA_PATH."/".getFileNameFromID($refID))) {
+        if(@unlink(DATA_REFS_PATH."/".getFileNameFromID($refID))) {
             $success = "File deleted";    
         }
     }
@@ -44,10 +44,10 @@
         }
         else {
             $fileName = uniqid().".jpg";
-            copy($_FILES["jpgFile"]["tmp_name"], DATA_PATH."/".$fileName);
+            copy($_FILES["jpgFile"]["tmp_name"], DATA_REFS_PATH."/".$fileName);
             $result = addImageFromDataFolder($fileName);
             if(!@$result->id) {
-                @unlink(DATA_PATH."/".$fileName);
+                @unlink(DATA_REFS_PATH."/".$fileName);
                 $error = "Can't send file : ".var_export($result, true);
             }
             else {
@@ -63,8 +63,8 @@
         else {
             $result = searchImage($_FILES["jpgFile"]["tmp_name"]);
             $fileName = uniqid().".jpg";
-            copy($_FILES["jpgFile"]["tmp_name"], DATA_PATH."/tmp/".$fileName);
-            $searchImage = "/tmp/".$fileName;
+            copy($_FILES["jpgFile"]["tmp_name"], DATA_TMP_PATH."/".$fileName);
+            $searchImage = $fileName;
             if(@$result->found) {
                 $success = "Image found";
                 $imageFound = $result->id;
@@ -88,13 +88,13 @@
             <div class="alert alert-success" role="alert"><?php echo $success?></div>
             <?php if(@$imageFound || @$searchImage):?>
                 <?php if ($imageFound):?>
-                    <p>Found <?php echo $imageFound?></p>
-                    <img class="ref-image" src="data/<?php echo getFileNameFromID($imageFound)?>"/>
+                    <p>Found reference image <?php echo $imageFound?> : </p>
+                    <p><img class="ref-image" src="<?php echo DATA_REFS_URL?>/<?php echo getFileNameFromID($imageFound)?>"/></p>
                 <?php else :?>
                     Not found
                 <?php endif;?>
-                <p>Source</p>
-                <img class="ref-image" src="data/<?php echo $searchImage?>"/>
+                <p>Image used for search : </p>
+                <p><img class="ref-image" src="<?php echo DATA_TMP_URL?>/<?php echo $searchImage?>"/></p>
             <?php endif?>
         </div>
     <?php endif;?>
@@ -134,7 +134,7 @@
             <div class="ref-image">
                 <h3><?php echo $refImage?></h3>
                 <p><a href="?action=delete&refID=<?php echo $refImage?>" class="btn btn-danger">delete</a></p>
-                <img class="ref-image" src="data/<?php echo getFileNameFromID($refImage)?>"/>
+                <img class="ref-image" src="<?php echo DATA_REFS_URL?>/<?php echo getFileNameFromID($refImage)?>"/>
             </div>
         <?php endforeach;?>
 
