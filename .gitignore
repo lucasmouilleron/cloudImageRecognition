@@ -2,7 +2,9 @@ _dev/js/libs/vendor
 cache
 composer.lock
 /data/tmp/*
+!/data/tmp/.gitkeep
 /data/refs/*
+!/data/refs/.gitkeep
 
 #################################################################################
 # miscs
